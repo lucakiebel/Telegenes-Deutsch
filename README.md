@@ -4,7 +4,7 @@ Soeben ist der "Formulierungshelfer Für Massenmedienführungskräfte", FOFÜMAM
 | Adjektiv | Nomen Teil 1 | Nomen Teil 2 |
 | :--- | :--- | :--- |
 | 0. anstaltseigene | 0. Kommunikations- | 0. -problematik |
-| 1. bildungsrelevante | 1. Informations. | 1. -analyse |
+| 1. bildungsrelevante | 1. Informations- | 1. -analyse |
 | 2. intermediäre | 2. Minderheiten- | 2. -politik |
 | 3. progressive | 3. Intendaten- | 3. -strategie |
 | 4. pluralistische | 4. Programm- | 4. -koordinierung |
