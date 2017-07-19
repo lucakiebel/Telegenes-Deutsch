@@ -11,20 +11,7 @@
   <script src="https://sk-cdn.net/libraries/jquery/jquery.js?v=3.21"></script>
   <link rel="stylesheet" href="https://sk-cdn.net/libraries/bootstrap/bootstrap.css?v=3">
   
-  <style>
-  button.copyc {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    border: 0;
-    outline: 0;
-    padding: 0.08em 0.8em;
-    cursor: pointer;
-  }
-  </style>
-  
+ 
 </head>
 <body>
   
@@ -65,8 +52,17 @@
       <h1>Wortkombination:</h1>
       <br>
       <div class="col-md-6 col-md-offset-3">
-       <input type="text" class="form-control input-lg copy1" style="text-align: center" readonly id="generatorFeld" value="multiple Einkaufswahlen">
-        <button type="button" class="btn btn-secondary copyc copy1"><span class="fa-floppy-o"></span></button>
+       <div class="input-group">
+          <input type="text" class="form-control"
+              value="telgener Satz" style="text-align: center" placeholder="Telegenes Deutsch!" id="copy-input">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="copy-button"
+                data-toggle="tooltip" data-placement="button"
+                title="In den Zwischenspeicher kopieren">
+              Kopieren
+            </button>
+          </span>
+        </div>
       </div>
       <div class="jumbotron text-center">
         <br>
