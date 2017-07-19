@@ -50,7 +50,7 @@ $(document).ready(function() {
   })();
   
   $("#generatorButton").click(() => {
-    var data = JSON.parse(localStorage.getItem("kombinationen"));
+    var data = localStorage.getItem("kombinationen")
     var teil1 = data.teil1[Math.floor(Math.random()*data.teil1.length)],
         teil2 = data.teil2[Math.floor(Math.random()*data.teil2.length)],
         teil3 = data.teil3[Math.floor(Math.random()*data.teil3.length)];
