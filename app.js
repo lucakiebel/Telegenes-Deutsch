@@ -38,7 +38,8 @@ $(document).ready(function() {
     $.get("telegeneKombinationen.json", data => {
       var t = d = new Date();
       t.setDate(t.getDate()-2);
-      if (localStorage.getItem("zeit") < t) { // Kombinationen veraltet
+      var e = localStorage.getItem("zeit");
+      if (e < t || e == undefined) { // Kombinationen veraltet oder nonexistent
         localStorage.setItem("zeit", d);
         localStorage.setItem("kombinationen", data);
       }
