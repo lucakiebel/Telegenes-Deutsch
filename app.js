@@ -1,30 +1,36 @@
-/** */
-(function() {
+/** 
+ *  http://davidzchen.com/tech/2016/01/19/bootstrap-copy-to-clipboard.html
+ *  © 2014 David Z. Chen
+ */
 
-// input 1
-var copyButton1 = document.querySelector('.copy1 button');
-var copyInput1 = document.querySelector('.copy1 input');
-copyButton1.addEventListener('click', function(e) {
-    e.preventDefault();
-    var text = copyInput1.select();
-    document.execCommand('copy');
-});
+$(document).ready(function() {
+  // Initialize the tooltip.
+  $('#copy-button').tooltip();
 
-copyInput1.addEventListener('click', function() {
-    this.select();
-});
-  
-// input 2
-var copyButton2 = document.querySelector('.copy2 button');
-var copyInput2 = document.querySelector('.copy2 input');
-copyButton1.addEventListener('click', function(e) {
-    e.preventDefault();
-    var text = copyInput2.select();
-    document.execCommand('copy');
-});
+  // When the copy button is clicked, select the value of the text box, attempt
+  // to execute the copy command, and trigger event to update tooltip message
+  // to indicate whether the text was successfully copied.
+  $('#copy-button').bind('click', function() {
+    var input = document.querySelector('#copy-input');
+    input.setSelectionRange(0, input.value.length + 1);
+    try {
+      var success = document.execCommand('copy');
+      if (success) {
+        $('#copy-button').trigger('copied', ['Copied!']);
+      } else {
+        $('#copy-button').trigger('copied', ['Copy with Ctrl-c']);
+      }
+    } catch (err) {
+      $('#copy-button').trigger('copied', ['Copy with Ctrl-c']);
+    }
+  });
 
-copyInput2.addEventListener('click', function() {
-    this.select();
+  // Handler for updating the tooltip message.
+  $('#copy-button').bind('copied', function(event, message) {
+    $(this).attr('title', message)
+        .tooltip('fixTitle')
+        .tooltip('show')
+        .attr('title', "Copy to Clipboard")
+        .tooltip('fixTitle');
+  });
 });
-
-})();
