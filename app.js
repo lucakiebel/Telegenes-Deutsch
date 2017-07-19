@@ -4,6 +4,8 @@
  */
 
 $(document).ready(function() {
+  console.log("init");
+  
   // Initialize the tooltip.
   $('#copy-button').tooltip();
 
