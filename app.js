@@ -1,6 +1,6 @@
 /** 
- *  http://davidzchen.com/tech/2016/01/19/bootstrap-copy-to-clipboard.html
- *  © 2014 David Z. Chen
+ *  https://blog.luca-kiebel.de/Copy-jQuery
+ *  © 2017 Luca Kiebel
  */
 
 $(document).ready(function() {
@@ -33,4 +33,24 @@ $(document).ready(function() {
         .attr('title', "Copy to Clipboard")
         .tooltip('fixTitle');
   });
+  
+  (function(){
+    $.get("telegeneKombinationen.json", data => {
+      var t = d = new Date();
+      t.setDate(t.getDate()-2);
+      if (localStorage.getItem("zeit") < t) { // Kombinationen veraltet
+        localStorage.setItem("zeit", d);
+        localStorage.setItem("kombinationen", data);
+      }
+    });
+  })();
+  
+  $("#generatorButton").click(() => {
+    var data = JSON.parse(localStorage.getItem("kombinationen"));
+    var teil1 = data.teil1[Math.floor(Math.random()*data.teil1.length)],
+        teil2 = data.teil2[Math.floor(Math.random()*data.teil2.length)],
+        teil3 = data.teil3[Math.floor(Math.random()*data.teil3.length)];
+    $("#copy-input").html(teil1+" "+teil2+teil3);    
+  });
+  
 });
