@@ -1,14 +1,14 @@
 {
   "teil1" : [
-    "", "", "", "", "", "", "", ""
+    "anstaltseigene", "bildungsrelevante", "intermediäre", "progressive", "pluralistische", "medienspezifische", "selektive", "zeitversetzte"
   ],
   "teil2" : [
-    "", "", "", "", "", "", "", ""
+    "Kommunikations", "Informations", "Minderheiten", "Intendanten", "Programm", "Zielgruppen", "Integrations", "Kontrast"
   ],
   "teil3" : [
-    "", "", "", "", "", "", "", ""
+    "problematik", "analyse", "politik", "strategie", "koordinierung", "stagnation", "zwänge", "planung"
   ],
   "verbund" : [
-    "", "", "", "", "", "", "", ""
+    "...", "...", "...", "...", "...", "...", "...", "..."
   ]
 }
