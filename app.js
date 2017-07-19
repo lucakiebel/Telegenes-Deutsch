@@ -12,7 +12,7 @@ $(document).ready(function() {
   // to indicate whether the text was successfully copied.
   $('#copy-button').bind('click', function() {
     var input = document.querySelector('#copy-input');
-    input.setSelectionRange(0, input.value.length + 1);
+    input.select();
     try {
       var success = document.execCommand('copy');
       if (success) {
