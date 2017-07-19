@@ -39,7 +39,8 @@ $(document).ready(function() {
       var t = d = new Date();
       t.setDate(t.getDate()-2);
       var e = localStorage.getItem("zeit");
-      if (e < t || e == undefined) { // Kombinationen veraltet oder nonexistent
+      if (e < t || e == undefined) {
+        console.log("Kombinationen veraltet oder nonexistent");
         localStorage.setItem("zeit", d);
         localStorage.setItem("kombinationen", data);
       }
@@ -51,6 +52,7 @@ $(document).ready(function() {
     var teil1 = data.teil1[Math.floor(Math.random()*data.teil1.length)],
         teil2 = data.teil2[Math.floor(Math.random()*data.teil2.length)],
         teil3 = data.teil3[Math.floor(Math.random()*data.teil3.length)];
+    console.log("Satz: \"" + teil1+" "+teil2+teil3 + "\"");
     $("#copy-input").html(teil1+" "+teil2+teil3);    
   });
   
