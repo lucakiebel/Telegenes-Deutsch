@@ -34,28 +34,19 @@ $(document).ready(function() {
         .tooltip('fixTitle');
   });
   
-  (function(){
+  function main(){
     $.getJSON("telegeneKombinationen.json", data => {
-      var t = d = new Date();
-      t.setDate(t.getDate()-2);
-      var e = localStorage.getItem("zeit");
-      if (e < t || e == undefined) {
-        console.log("Kombinationen veraltet oder nonexistent");
-        localStorage.setItem("zeit", d);
-        localStorage.setItem("kombinationen", data);
-      }
-    });
-  })();
-  
-  $("#generatorButton").click(() => {
-    var data = localStorage.getItem("kombinationen")
-    console.log(Object.keys(data).length);
-    console.log(data);
-    var teil1 = data.teil1[Math.floor(Math.random()*data.teil1.length)],
+      var teil1 = data.teil1[Math.floor(Math.random()*data.teil1.length)],
         teil2 = data.teil2[Math.floor(Math.random()*data.teil2.length)],
         teil3 = data.teil3[Math.floor(Math.random()*data.teil3.length)];
     console.log("Satz: \"" + teil1+" "+teil2+teil3 + "\"");
     $("#copy-input").html(teil1+" "+teil2+teil3);    
+    });
+  }
+  
+  $("#generatorButton").click(() => {
+    main();
+    
   });
   
 });
