@@ -37,7 +37,7 @@ $(document).ready(function() {
   });
   
   (function(){
-    $.get("telegeneKombinationen.json", data => {
+    $.getJSON("telegeneKombinationen.json", data => {
       var t = d = new Date();
       t.setDate(t.getDate()-2);
       var e = localStorage.getItem("zeit");
