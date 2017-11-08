@@ -40,9 +40,11 @@ $(document).ready(function() {
         teil2 = data.teil2[Math.floor(Math.random()*data.teil2.length)],
         teil3 = data.teil3[Math.floor(Math.random()*data.teil3.length)];
     console.log("Satz: \"" + teil1+" "+teil2+teil3 + "\"");
-    $("#copy-input").html(teil1+" "+teil2+teil3);    
+    $("#copy-input").val(teil1+" "+teil2+teil3);    
     });
   }
+  
+  main();
   
   $("#generatorButton").click(() => {
     main();
