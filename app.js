@@ -3,9 +3,7 @@
  *  © 2017 Luca Kiebel
  */
 
-$(document).ready(function() {
-  console.log("init");
-  
+$(document).ready(function() {  
   // Initialize the tooltip.
   $('#copy-button').tooltip();
 
@@ -52,6 +50,7 @@ $(document).ready(function() {
   $("#generatorButton").click(() => {
     var data = localStorage.getItem("kombinationen")
     console.log(Object.keys(data).length);
+    console.log(data);
     var teil1 = data.teil1[Math.floor(Math.random()*data.teil1.length)],
         teil2 = data.teil2[Math.floor(Math.random()*data.teil2.length)],
         teil3 = data.teil3[Math.floor(Math.random()*data.teil3.length)];
